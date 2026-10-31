@@ -26,15 +26,28 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
+      { title: 'NACOS × Stellar Builders Program | Register now' },
       {
-        title: 'TanStack Start Starter',
+        name: 'description',
+        content:
+          'Blockchain is bigger than trading. Join computing students across Nigeria learning, building and earning on Stellar. Free registration takes under 2 minutes.',
       },
+      { name: 'theme-color', content: '#0f2e1d' },
+      { property: 'og:type', content: 'website' },
+      {
+        property: 'og:title',
+        content: 'Beyond Trading. Start Building on Blockchain.',
+      },
+      {
+        property: 'og:description',
+        content:
+          'NACOS Blockchain Innovation and Builders Program, powered by Stellar. Register in under 2 minutes.',
+      },
+      { name: 'twitter:card', content: 'summary' },
     ],
     links: [
-      {
-        rel: 'stylesheet',
-        href: appCss,
-      },
+      { rel: 'stylesheet', href: appCss },
+      { rel: 'icon', href: '/favicon.ico' },
     ],
   }),
   shellComponent: RootDocument,
@@ -48,18 +61,20 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
-        <TanStackDevtools
-          config={{
-            position: 'bottom-right',
-          }}
-          plugins={[
-            {
-              name: 'Tanstack Router',
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-            TanStackQueryDevtools,
-          ]}
-        />
+        {import.meta.env.DEV && (
+          <TanStackDevtools
+            config={{
+              position: 'bottom-right',
+            }}
+            plugins={[
+              {
+                name: 'Tanstack Router',
+                render: <TanStackRouterDevtoolsPanel />,
+              },
+              TanStackQueryDevtools,
+            ]}
+          />
+        )}
         <Scripts />
       </body>
     </html>
