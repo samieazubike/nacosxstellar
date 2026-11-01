@@ -34,7 +34,7 @@ export function ZoneRace({ stats }: { stats: Stats }) {
         </dl>
 
         <div className="mt-6 grid gap-4 lg:grid-cols-[1.3fr_1fr]">
-          <div className="rounded-3xl bg-white/[0.04] p-5 ring-1 ring-white/10 sm:p-7">
+          <div className="min-w-0 rounded-3xl bg-white/[0.04] p-5 ring-1 ring-white/10 sm:p-7">
             <h3 className="text-xl font-semibold">Zone leaderboard</h3>
             <ol className="mt-6 space-y-4">
               {stats.zones.map((zone, i) => (
@@ -56,7 +56,7 @@ export function ZoneRace({ stats }: { stats: Stats }) {
                       i + 1
                     )}
                   </span>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-sm font-medium">{zone.zone}</p>
                     <div className="mt-1.5 h-2.5 overflow-hidden rounded-full bg-white/10">
                       <div
@@ -81,7 +81,7 @@ export function ZoneRace({ stats }: { stats: Stats }) {
             )}
           </div>
 
-          <div className="rounded-3xl bg-card p-5 text-card-foreground sm:p-7">
+          <div className="min-w-0 rounded-3xl bg-card p-5 text-card-foreground sm:p-7">
             <h3 className="text-xl font-semibold">Top institutions</h3>
             {stats.top_schools.length > 0 ? (
               <ol className="mt-5 divide-y divide-ink/10">

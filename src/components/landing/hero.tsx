@@ -186,7 +186,7 @@ function JustJoinedCard({ stats }: { stats: Stats }) {
   const [slot] = fillAvatarSlots(person ? [person] : [], 1)
 
   return (
-    <div className="flex items-center gap-3 rounded-2xl bg-card p-3 pr-4 text-card-foreground shadow-xl shadow-black/20 sm:-mt-2">
+    <div className="flex min-w-0 items-center gap-3 rounded-2xl bg-card p-3 pr-4 text-card-foreground shadow-xl shadow-black/20 sm:-mt-2">
       <ParticipantAvatar slot={slot} className="size-10 ring-0" />
       <div key={person?.id ?? 'empty'} className="animate-rise min-w-0 text-sm">
         {person ? (
